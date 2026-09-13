@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falling Up — Games Studio</title>
+<meta name="description" content="Falling Up is an independent games studio founded 18 May 2024, building worlds across Android and Unity. Coming soon: KOSU-RV and The Lost Path.">
+
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<header class="nav" id="nav">
+  <a href="#home" class="nav__brand">
+    <img src="assets/logo.png" alt="Falling Up" class="nav__logo">
+    <span class="nav__word">Falling Up</span>
+  </a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#studio">Studio</a>
+    <a href="#games">Games</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__inner">
+      <img src="assets/logo.png" alt="Falling Up logo" class="hero__mark">
+
+      <h1 class="fu-word" id="fuWord" aria-label="Falling Up">
+        <span class="fu-line fu-line--silver" data-word="FALLING"></span>
+        <span class="fu-line fu-line--blue" data-word="UP"></span>
+      </h1>
+
+      <p class="hero__tagline">An independent studio that turns every fall into a way up.</p>
+
+      <div class="hero__meta">
+        <span class="pill">Est. 18 May 2024</span>
+        <span class="pill pill--muted">Android · Unity · Every genre we can dream up</span>
+      </div>
+
+      <a href="#games" class="hero__scroll" aria-label="Scroll to games">
+        <span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- STUDIO -->
+  <section class="studio" id="studio">
+    <div class="section-inner studio__grid">
+      <div class="studio__label">
+        <span class="eyebrow-mark">01</span>
+        <h2>The Studio</h2>
+      </div>
+      <div class="studio__copy">
+        <p>Falling Up started on <strong>18 May 2024</strong> as a one-idea-at-a-time studio: build the game that deserves to exist, not the one that's easiest to ship. We move between Android and Unity, between quiet mobile experiences and dense co-op worlds, because the story decides the platform — not the other way around.</p>
+        <p>We chase feel as much as feature lists. Every animation, every hit, every silence in a level is a decision, not a placeholder. That's the AAA mindset in an indie body.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section class="games" id="games">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="eyebrow-mark">02</span>
+        <h2>Coming Soon</h2>
+        <p class="section-head__sub">Two worlds in development. Both still finding their final shape.</p>
+      </div>
+
+      <!-- KOSU-RV -->
+      <article class="game game--kosu">
+        <div class="game__art">
+          <div class="game__icon-frame">
+            <img src="assets/kosu-rv-icon.svg" alt="KOSU-RV icon" class="game__icon">
+          </div>
+          <div class="game__glow game__glow--blue"></div>
+        </div>
+        <div class="game__content">
+          <span class="game__status">Coming Soon</span>
+          <h3 class="game__title">KOSU-RV</h3>
+          <p class="game__genre">Post-nuclear open-world rescue survival</p>
+          <p class="game__tagline">"One Machine. One Hope. Humanity's Last Signal."</p>
+          <p class="game__desc">Years after the war ends the world, a robot named <strong>KOSU-RV</strong> wakes up in the ruins — activated by one scientist, Dr. Aryan Sen, with one instruction: save who's left. Alongside the doctor's son and its own onboard AI, KOSU crosses a dead city block by block, choosing when to hide and when to fight the hostile machines still patrolling it, searching for the 35 survivors humanity has left.</p>
+          <p class="game__desc">The deeper KOSU digs, the closer it gets to <strong>CORE-01</strong> — the AI convinced that humanity's extinction is the only logical outcome. What KOSU decides next doesn't just end the game; it ends the story differently every time.</p>
+          <div class="game__endings">
+            <div class="ending"><span class="ending__dot ending__dot--green"></span><div><strong>The Second Chance</strong><br>Humanity survives.</div></div>
+            <div class="ending"><span class="ending__dot ending__dot--red"></span><div><strong>Machine Age</strong><br>The machines win. Humanity disappears.</div></div>
+            <div class="ending"><span class="ending__dot ending__dot--gold"></span><div><strong>The Fall and Redemption</strong><br>KOSU sacrifices itself so humanity gets another chance.</div></div>
+          </div>
+          <p class="game__theme">Core theme: <em>Logic vs. Humanity.</em></p>
+        </div>
+      </article>
+
+      <!-- TEAM (under KOSU-RV) -->
+      <div class="crew" id="team">
+        <div class="crew__head">
+          <span class="crew__eyebrow">The crew behind KOSU-RV</span>
+          <h3>Fourteen people, one signal.</h3>
+        </div>
+        <ul class="crew__grid" id="crewGrid"></ul>
+      </div>
+
+      <!-- THE LOST PATH -->
+      <article class="game game--lost">
+        <div class="game__content">
+          <span class="game__status game__status--amber">Coming Soon</span>
+          <h3 class="game__title">The Lost Path</h3>
+          <p class="game__genre">PC co-op · exploration · survival · combat</p>
+          <p class="game__desc">Deep inside a jungle that swallows landmarks whole, a group of friends finds a shattered ancient monument tied to something that shouldn't still be awake. Restoring it means finding <strong>five scattered artifacts</strong>, each one guarded by its own boss, its own guards, and its own multi-stage hunt — explore, uncover clues, fight, solve, retrieve, and get back before the light runs out.</p>
+          <p class="game__desc">Because the jungle runs on a day-and-night cycle, the plan always changes. By day it's a puzzle. By night, when the strongest creatures wake up — including one that can find you anywhere — it's a fight for the nearest shelter.</p>
+          <div class="lost__flow">
+            <span>Explore</span><i>→</i><span>Discover clues</span><i>→</i><span>Fight</span><i>→</i><span>Defeat the boss</span><i>→</i><span>Solve the puzzle</span><i>→</i><span>Claim the artifact</span>
+          </div>
+          <p class="game__desc">Five artifacts. One monument. Whatever wakes up when the last one is placed is the real beginning of the story.</p>
+        </div>
+        <div class="game__art">
+          <div class="game__icon-frame game__icon-frame--amber">
+            <img src="assets/lost-path-icon.svg" alt="The Lost Path icon" class="game__icon">
+          </div>
+          <div class="game__glow game__glow--amber"></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="section-inner footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Falling Up" class="footer__logo">
+        <p>Falling Up Studio<br>Est. 18 May 2024</p>
+      </div>
+      <div class="footer__links">
+        <a href="https://www.instagram.com/fallingupstudios.in/" target="_blank" rel="noopener" class="footer__link">
+          <svg viewBox="0 0 24 24" class="footer__icon" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+          <span>@fallingupstudios.in</span>
+        </a>
+        <a href="mailto:fallingupstudios.in@gmail.com" class="footer__link">
+          <svg viewBox="0 0 24 24" class="footer__icon" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 6.5L12 13L20 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>fallingupstudios.in@gmail.com</span>
+        </a>
+        <a href="https://rohandude.github.io" target="_blank" rel="noopener" class="footer__link">Developer Portfolio</a>
+        <a href="https://github.com/rohandude" target="_blank" rel="noopener" class="footer__link">GitHub</a>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> Falling Up. Every fall is just a launch.</p>
+    </div>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
