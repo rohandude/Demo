@@ -121,3 +121,46 @@ if(!reduceMotion){
 } else {
   draw();
 }
+
+// ============ CONTACT FORM (FormSubmit.co — no backend needed) ============
+const cform = document.getElementById('cform');
+const cformStatus = document.getElementById('cformStatus');
+const CONTACT_EMAIL = 'fallingupstudios.in@gmail.com';
+
+if(cform){
+  cform.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = cform.querySelector('.cform__submit');
+    const data = {
+      name: cform.name.value.trim(),
+      email: cform.email.value.trim(),
+      message: cform.message.value.trim(),
+      _subject: 'New message from Falling Up website'
+    };
+
+    submitBtn.disabled = true;
+    cformStatus.textContent = 'Sending...';
+    cformStatus.className = 'cform__status is-pending';
+
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      if(res.ok && (result.success === 'true' || result.success === true)){
+        cformStatus.textContent = "Sent! We'll get back to you soon.";
+        cformStatus.className = 'cform__status is-success';
+        cform.reset();
+      } else {
+        throw new Error('Send failed');
+      }
+    } catch(err){
+      cformStatus.textContent = "Couldn't send right now — please email us directly instead.";
+      cformStatus.className = 'cform__status is-error';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
